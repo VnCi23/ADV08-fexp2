@@ -11,7 +11,7 @@ app.use(cors());
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, '../client/build')));
 
-mongoose.connect("mongodb+srv://vincegaurino:vincegaurino1823*@mstipgrading.jfugg.mongodb.net/fexp2")
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.error("MongoDB error:", err));
 
