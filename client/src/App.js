@@ -13,7 +13,6 @@ function App() {
   const [employees, setEmployees] = useState([]);
   const [currentPage, setCurrentPage] = useState("insert");
 
-  // Fetch employees from the server
   const fetchEmployees = async () => {
     try {
       const res = await axios.get("http://localhost:5000/employees");
@@ -23,7 +22,6 @@ function App() {
     }
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -41,14 +39,12 @@ function App() {
     }
   };
 
-  // Fetch employees on component mount
   useEffect(() => {
     fetchEmployees();
   }, []);
 
   return (
     <div style={{ backgroundColor: "#1f1f1f", color: "#e5e5e5", minHeight: "100vh" }}>
-      {/* Header Section */}
       <header
         style={{
           backgroundColor: "#2a2a2a",
@@ -79,7 +75,6 @@ function App() {
         </div>
       </header>
 
-      {/* Page Content */}
       <div className="container mx-auto p-4 md:p-6">
         {currentPage === "insert" && (
           <div className="flex justify-center items-center">
