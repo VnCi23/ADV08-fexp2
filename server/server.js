@@ -5,7 +5,14 @@ const cors = require("cors");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+
+const corsOptions = {
+  origin:  '*', 
+  methods: "GET,POST", 
+  allowedHeaders: "Content-Type,Authorization", 
+};
+
+app.use(cors(corsOptions));
 
 mongoose.connect("mongodb+srv://vincegaurino:vincegaurino1823*@mstipgrading.jfugg.mongodb.net/fexp2")
   .then(() => console.log("MongoDB connected"))
