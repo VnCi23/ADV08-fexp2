@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 
 const corsOptions = {
-  origin: "https://adv08-fexp2.vercel.app", 
+  origin: ["http://localhost:3000", "https://fexp2.vercel.app"],
   methods: "GET,POST", 
   allowedHeaders: "Content-Type,Authorization", 
 };
