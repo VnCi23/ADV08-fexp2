@@ -31,4 +31,5 @@ app.get("/employees", async (req, res) => {
   res.json(employees);
 });
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+// Export the app for Vercel
+module.exports = app;
