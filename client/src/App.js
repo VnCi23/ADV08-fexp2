@@ -15,7 +15,7 @@ function App() {
 
   const fetchEmployees = async () => {
     try {
-      const res = await axios.get("https://adv08-fexp2-server.vercel.app/employees");
+      const res = await axios.get("http://localhost:5000/employees");
       setEmployees(res.data);
     } catch (error) {
       console.error("Error fetching employees:", error);
@@ -25,7 +25,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://adv08-fexp2-server.vercel.app/employees", form);
+      await axios.post("http://localhost:5000/employees", form);
       fetchEmployees();
       setForm({
         name: "",
